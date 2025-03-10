@@ -1,0 +1,16 @@
+﻿---Package Manager Console-----
+
+** 1. Adım - Gerekli paketler yüklenir
+Install-Package Microsoft.EntityFrameworkCore  
+Install-Package Microsoft.EntityFrameworkCore.SqlServer  
+Install-Package Microsoft.EntityFrameworkCore.Tools  
+
+** 2. Adım - cd ile proje dosyası konumuna gidilir
+cd 
+
+** 3. Adım - Projeyi rebuild etmelisin.
+
+** 4. Adım - Aşağıdaki komut ile belirtilen yoldaki veritabanı Models klasörü içerisine oluşturulur.
+** DELL\SQLEXPRESS yerine kendi veritabanı sunucu adınızı yazmalısınız.
+** DBBerber yerine oluşturulacak veritabanı adını yazmalısınız.
+dotnet ef dbcontext scaffold "Server=DELL\SQLEXPRESS;Database=DBBerber;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models -f

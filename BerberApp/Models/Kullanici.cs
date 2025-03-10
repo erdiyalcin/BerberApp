@@ -17,5 +17,9 @@ public partial class Kullanici
 
     public int? YetkiId { get; set; }
 
+    public virtual ICollection<Musteri> Musteris { get; set; } = new List<Musteri>();
+
+    public virtual ICollection<Randevu> Randevus { get; set; } = new List<Randevu>();
+
     public virtual Yetki? Yetki { get; set; }
 }
